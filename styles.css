@@ -1,3 +1,68 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+header h1 {
+    margin: 0;
+    animation: slideInLeft 1s ease-in-out;
+}
+
+section {
+    padding: 20px;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1.5s ease-in-out;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+h2 {
+    color: #333;
+    animation: bounceIn 1.2s ease-in-out;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background: #f9f9f9;
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    animation: fadeInLeft 1s ease-in-out;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    animation: fadeIn 2s ease-in-out;
+}
+
+footer p {
+    margin: 0;
+}
+
 /* Profile Picture Styles */
 .profile-section {
     text-align: center;
@@ -25,6 +90,95 @@
     font-size: 18px;
     margin-top: 10px;
     animation: fadeInUp 1.5s ease-in-out;
+}
+
+/* Theme Toggle Switch */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 24px;
+    position: relative;
+    width: 48px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+
+.slider:before {
+    background-color: white;
+    bottom: 4px;
+    content: "";
+    height: 16px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 16px;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+#theme-label {
+    margin-left: 10px;
+    font-size: 16px;
+    color: inherit;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #181818;
+    color: #e4e4e4;
+}
+
+body.dark-mode section {
+    background-color: #242424;
+}
+
+body.dark-mode .profile-picture {
+    border-color: #e4e4e4;
+}
+
+body.dark-mode header {
+    background-color: #444;
+}
+
+body.dark-mode footer {
+    background-color: #444;
+}
+
+body.dark-mode #theme-label {
+    color: #e4e4e4;
 }
 
 /* Profile Picture Animation */
@@ -61,118 +215,7 @@
     }
 }
 
-/* Media Queries for Mobile Devices */
-@media (max-width: 768px) {
-    .profile-picture {
-        width: 100px;
-        height: 100px;
-    }
-
-    .profile-section h2 {
-        font-size: 20px;
-    }
-
-    .profile-section p {
-        font-size: 16px;
-    }
-}
-
-/* Media Queries for Tablets */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .profile-picture {
-        width: 120px;
-        height: 120px;
-    }
-
-    .profile-section h2 {
-        font-size: 22px;
-    }
-
-    .profile-section p {
-        font-size: 17px;
-    }
-}
-
-/* Media Queries for Desktops */
-@media (min-width: 1025px) {
-    .profile-picture {
-        width: 150px;
-        height: 150px;
-    }
-
-    .profile-section h2 {
-        font-size: 24px;
-    }
-
-    .profile-section p {
-        font-size: 18px;
-    }
-}
-
-
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    animation: fadeIn 2s ease-in-out;
-}
-
-header h1 {
-    margin: 0;
-    animation: slideInLeft 1s ease-in-out;
-}
-
-section {
-    padding: 20px;
-    margin: 10px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    animation: fadeInUp 1.5s ease-in-out;
-}
-
-h2 {
-    color: #333;
-    animation: bounceIn 1.2s ease-in-out;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    background: #f9f9f9;
-    margin: 5px 0;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    animation: fadeInLeft 1s ease-in-out;
-}
-
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
-    animation: fadeIn 2s ease-in-out;
-}
-
-footer p {
-    margin: 0;
-}
-
-/* Animations */
+/* General Animations */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -181,11 +224,6 @@ footer p {
 @keyframes slideInLeft {
     from { transform: translateX(-100%); opacity: 0; }
     to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes fadeInUp {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
 }
 
 @keyframes bounceIn {
@@ -225,6 +263,19 @@ footer p {
     footer {
         padding: 8px;
     }
+
+    .profile-picture {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-section h2 {
+        font-size: 20px;
+    }
+
+    .profile-section p {
+        font-size: 16px;
+    }
 }
 
 /* Media Queries for Tablets */
@@ -250,6 +301,19 @@ footer p {
     footer {
         padding: 10px;
     }
+
+    .profile-picture {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-section h2 {
+        font-size: 22px;
+    }
+
+    .profile-section p {
+        font-size: 17px;
+    }
 }
 
 /* Media Queries for Desktops */
@@ -274,5 +338,18 @@ footer p {
 
     footer {
         padding: 12px;
+    }
+
+    .profile-picture {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profile-section h2 {
+        font-size: 24px;
+    }
+
+    .profile-section p {
+        font-size: 18px;
     }
 }
