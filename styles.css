@@ -1,3 +1,115 @@
+/* Profile Picture Styles */
+.profile-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #333;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    animation: profilePicAnimation 2s ease-in-out infinite alternate;
+}
+
+.profile-section h2 {
+    margin-top: 15px;
+    font-size: 24px;
+    color: #333;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.profile-section p {
+    color: #555;
+    font-size: 18px;
+    margin-top: 10px;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+/* Profile Picture Animation */
+@keyframes profilePicAnimation {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+/* Title Animation */
+@keyframes fadeInDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Paragraph Animation */
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    .profile-picture {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-section h2 {
+        font-size: 20px;
+    }
+
+    .profile-section p {
+        font-size: 16px;
+    }
+}
+
+/* Media Queries for Tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .profile-picture {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-section h2 {
+        font-size: 22px;
+    }
+
+    .profile-section p {
+        font-size: 17px;
+    }
+}
+
+/* Media Queries for Desktops */
+@media (min-width: 1025px) {
+    .profile-picture {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profile-section h2 {
+        font-size: 24px;
+    }
+
+    .profile-section p {
+        font-size: 18px;
+    }
+}
+
+
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
