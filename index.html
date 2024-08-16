@@ -100,5 +100,33 @@
     <footer>
         <p>&copy; 2024 Pramatma Vishwakarma</p>
     </footer>
+
+    <script>
+        const toggleSwitch = document.querySelector('#checkbox');
+        const currentTheme = localStorage.getItem('theme');
+        const themeLabel = document.getElementById('theme-label');
+    
+        if (currentTheme) {
+            document.body.classList.add(currentTheme);
+    
+            if (currentTheme === 'dark-mode') {
+                toggleSwitch.checked = true;
+                themeLabel.textContent = 'Dark Mode';
+            }
+        }
+    
+        toggleSwitch.addEventListener('change', () => {
+            if (toggleSwitch.checked) {
+                document.body.classList.add('dark-mode');
+                themeLabel.textContent = 'Dark Mode';
+                localStorage.setItem('theme', 'dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+                themeLabel.textContent = 'Light Mode';
+                localStorage.setItem('theme', 'light-mode');
+            }
+        });
+    </script>
+
 </body>
 </html>
