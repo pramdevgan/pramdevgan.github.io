@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -11,10 +12,12 @@ header {
     color: #fff;
     padding: 20px;
     text-align: center;
+    animation: fadeIn 2s ease-in-out;
 }
 
 header h1 {
     margin: 0;
+    animation: slideInLeft 1s ease-in-out;
 }
 
 section {
@@ -23,10 +26,12 @@ section {
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1.5s ease-in-out;
 }
 
 h2 {
     color: #333;
+    animation: bounceIn 1.2s ease-in-out;
 }
 
 ul {
@@ -40,6 +45,7 @@ ul li {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    animation: fadeInLeft 1s ease-in-out;
 }
 
 footer {
@@ -47,8 +53,114 @@ footer {
     padding: 10px;
     background-color: #333;
     color: #fff;
+    animation: fadeIn 2s ease-in-out;
 }
 
 footer p {
     margin: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bounceIn {
+    0%, 20%, 40%, 60%, 80%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes fadeInLeft {
+    from { transform: translateX(-10px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+    
+    header {
+        padding: 15px;
+    }
+
+    section {
+        padding: 15px;
+        margin: 5px;
+    }
+
+    ul li {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    footer {
+        padding: 8px;
+    }
+}
+
+/* Media Queries for Tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    body {
+        font-size: 18px;
+    }
+    
+    header {
+        padding: 20px;
+    }
+
+    section {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    ul li {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    footer {
+        padding: 10px;
+    }
+}
+
+/* Media Queries for Desktops */
+@media (min-width: 1025px) {
+    body {
+        font-size: 20px;
+    }
+    
+    header {
+        padding: 25px;
+    }
+
+    section {
+        padding: 25px;
+        margin: 15px;
+    }
+
+    ul li {
+        padding: 12px;
+        font-size: 18px;
+    }
+
+    footer {
+        padding: 12px;
+    }
 }
